@@ -33,7 +33,8 @@ Load this file when the user is pushing metadata, preparing builds, managing the
 
 - Metadata only
   - Use when no plugin code or SQL is needed.
-  - This package skips quality scan and can be published directly after build.
+  - Do not assume this package skips every scan step.
+  - Current platform behavior may still perform metadata scanning and produce a quality conclusion.
 - Metadata plus plugin code
   - Default for combined delivery.
 - Plugin code only or Jar-only

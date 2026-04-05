@@ -41,6 +41,29 @@ There are two common cases.
 
 ## Build Failures
 
+### Build Result Never Changes To Success Or Failure
+
+- Symptom: the build stays in a running or unresolved state for a long time and never clearly becomes `成功` or `失败`.
+- Default handling path:
+  1. first open the build log
+  2. use the log output as the primary troubleshooting evidence
+  3. if the build log still does not expose a useful clue, route the user to DCS platform support instead of guessing
+- Current field rule:
+  - if the log is also not helpful, ask the user to contact 林心梅 or 谭鼎鹏 in the DCS 云之家沟通群
+- Do not prioritize dashboard-style interpretation ahead of the build log for this scenario.
+
+## Quality-Scan Problems
+
+### Quality Conclusion Never Appears After Build Success
+
+- Symptom: the build has already succeeded, but the quality conclusion still does not appear.
+- First split the case into two common branches:
+  - the current build contains a lot of content, so the scan is still taking a long time
+  - one scan engine is abnormal, so the overall quality conclusion cannot be produced
+- Default handling path:
+  1. confirm whether the scan is simply taking longer than usual
+  2. if there is reason to suspect scan-engine abnormality, route the user to DCS operations instead of guessing a repo-side fix
+
 ### `gradle.properties不存在`
 
 - Cause: required Gradle files were never committed to the repo.

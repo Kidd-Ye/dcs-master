@@ -13,11 +13,13 @@ Load this file when the user is working on publish, quality reports, test report
 ## Quality Report Rules
 
 - Quality reports are based on Fortify and SonarQube results.
+- Current platform behavior may also include metadata-scan conclusions for metadata-only artifacts.
 - DCS web build guidance states:
   - Fortify severe, high, and medium findings must all be zero before pass
   - SonarQube severe and high findings must be zero before pass
 - In the report, use the rule name, file path, line number, and repair suggestion to plan the fix.
-- For metadata-only packages, quality-scan fields can be empty and the package can still be published.
+- Do not assume metadata-only packages have empty quality-conclusion fields.
+- Current field rule: metadata-only artifacts may also run metadata scanning and produce a quality conclusion.
 
 ## How To Work A Quality Report
 
@@ -26,6 +28,14 @@ Load this file when the user is working on publish, quality reports, test report
 3. Use exact file and line references when the report provides them.
 4. If the user wants code changes, inspect the real repo and fix the narrowest root cause.
 5. After edits, tell the user to rebuild and rescan in DCS.
+
+## When Quality Conclusion Does Not Appear
+
+- If build is already successful but the quality conclusion still does not appear, first consider two common causes:
+  - the build content is large and scan time is still in progress
+  - one scan engine is abnormal, so the overall quality conclusion cannot be produced
+- For the first case, guide the user to wait and keep checking the scan-related status.
+- For the second case, do not guess a repo-side fix first; route the user to DCS operations for handling.
 
 ## Test Report Flow
 
