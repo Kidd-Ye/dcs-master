@@ -1,0 +1,17 @@
+{
+  "name": "dcs-master",
+  "display_name": "DCS Master 助手",
+  "version": "1.0.0",
+  "source": {
+    "repo": "Kidd-Ye/dcs-master",
+    "ref": "main",
+    "path": "dcs-master",
+    "manifest_path": "dcs-master/skill-manifest.json",
+    "homepage": "https://github.com/Kidd-Ye/dcs-master"
+  },
+  "update": {
+    "check_on_load": true,
+    "install_command": "python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo Kidd-Ye/dcs-master --path dcs-master",
+    "notes_url": "https://github.com/Kidd-Ye/dcs-master/releases"
+  }
+}

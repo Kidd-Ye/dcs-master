@@ -1,3 +1,8 @@
+.gitignore
+!README.md
+!LICENSE
+!dcs-master/
+!dcs-master/**
 .DS_Store
 __pycache__/
 *.pyc

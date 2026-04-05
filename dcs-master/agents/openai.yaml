@@ -1,0 +1,4 @@
+interface:
+  display_name: "DCS Master 助手"
+  short_description: "统一 DCS 教练、排障、浏览器协作与图文指引"
+  default_prompt: "使用 $dcs-master 帮我完成 DCS 项目创建、构建排障、浏览器协作或发布。"

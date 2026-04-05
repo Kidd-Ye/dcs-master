@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "updatedAt": "2026-03-20T00:00:00+08:00",
+  "pages": [
+    {
+      "pageKey": "dcs_dashboard_home",
+      "match": {
+        "hostEquals": "dcs.kdgalaxy.com",
+        "urlIncludes": [
+          "/ierp/?formId=home_page"
+        ],
+        "titleIncludes": [
+          "协同开发云"
+        ]
+      },
+      "elements": {
+        "create_project_button": {
+          "selector": "#tblnew",
+          "action": "click",
+          "description": "开发项目管理列表工具栏中的新增按钮，进入项目创建表单。",
+          "validateText": "新增",
+          "source": "2026-03-20 live DCS session",
+          "updatedAt": "2026-03-20T00:00:00+08:00"
+        },
+        "navigation_tree": {
+          "selector": "#navigationbar",
+          "action": "read",
+          "description": "左侧导航树容器，可用于判断当前是否位于协同开发管理首页。",
+          "validateText": "项目管理",
+          "source": "2026-03-20 live DCS session",
+          "updatedAt": "2026-03-20T00:00:00+08:00"
+        }
+      }
+    },
+    {
+      "pageKey": "dcs_project_create_basic",
+      "match": {
+        "hostEquals": "dcs.kdgalaxy.com",
+        "titleIncludes": [
+          "协同开发云"
+        ],
+        "bodyIncludes": [
+          "开发项目管理",
+          "待初始化"
+        ]
+      },
+      "elements": {
+        "project_type_field": {
+          "selector": "#projecttype",
+          "action": "click",
+          "description": "项目类型字段容器，用于展开项目类型下拉。",
+          "validateText": "项目类型",
+          "source": "2026-03-20 live DCS session",
+          "updatedAt": "2026-03-20T00:00:00+08:00"
+        },
+        "customer_name_field": {
+          "selector": "#customername",
+          "action": "fill",
+          "description": "客户名称字段容器。",
+          "validateText": "客户名称",
+          "source": "2026-03-20 live DCS session",
+          "updatedAt": "2026-03-20T00:00:00+08:00"
+        },
+        "remark_field": {
+          "selector": "#remark",
+          "action": "fill",
+          "description": "备注字段容器。",
+          "validateText": "备注",
+          "source": "2026-03-20 live DCS session",
+          "updatedAt": "2026-03-20T00:00:00+08:00"
+        }
+      }
+    }
+  ]
+}

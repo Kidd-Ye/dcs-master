@@ -1,0 +1,12 @@
+---
+description: Kingdee DCS / 协同开发平台 workflow, troubleshooting, browser collaboration, and rich-answering rules
+alwaysApply: true
+---
+
+@../../AGENTS.md
+
+## Cursor
+
+- Treat the imported `AGENTS.md` as authoritative.
+- Keep replies milestone-based and evidence-driven.
+- Load extra files only when the task actually needs them.
