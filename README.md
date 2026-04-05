@@ -60,6 +60,52 @@ python3 dcs-master/scripts/install-portable-skill.py universal --to /path/to/pro
 2. 解压后进入仓库目录
 3. 按上面的工具类型执行对应安装命令
 
+## 升级
+
+### 我怎么知道有新版本
+
+- 如果你的安装副本里包含 `skill-manifest.json`，可以运行：
+
+```bash
+python3 ~/.codex/skills/dcs-master/scripts/check-skill-update.py
+```
+
+- 也可以直接查看本仓库的 Release 页面：
+
+```text
+https://github.com/Kidd-Ye/dcs-master/releases
+```
+
+### Codex 升级
+
+如果你已经把 skill 安装到 `~/.codex/skills/dcs-master`，可直接运行：
+
+```bash
+python3 ~/.codex/skills/dcs-master/scripts/upgrade-from-github.py codex --to ~/.codex/skills
+```
+
+### OpenCode 升级
+
+项目级安装可直接覆盖升级：
+
+```bash
+python3 /path/to/project/.opencode/skills/dcs-master/scripts/upgrade-from-github.py opencode --to /path/to/project --scope project
+```
+
+### Claude / Cursor / Copilot / Gemini 升级
+
+如果你是项目级安装，直接对原项目根目录执行：
+
+```bash
+python3 /path/to/project/.dcs-master/scripts/upgrade-from-github.py universal --to /path/to/project
+```
+
+### 手工下载用户
+
+- 重新下载最新 ZIP
+- 用最新包重新执行安装命令
+- 或者用本包里的 `upgrade-from-github.py` 直接覆盖升级
+
 ## 典型提问
 
 - 带我一步步创建 DCS 项目
@@ -71,7 +117,7 @@ python3 dcs-master/scripts/install-portable-skill.py universal --to /path/to/pro
 
 ## 版本
 
-- 当前版本：`v1.0.0`
+- 当前版本：`v1.0.1`
 
 ## 许可证
 
