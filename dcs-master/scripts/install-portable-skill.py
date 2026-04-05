@@ -28,6 +28,8 @@ def parse_args() -> argparse.Namespace:
         "vendor",
         choices=[
             "codex",
+            "qoderwork",
+            "skilldir",
             "opencode",
             "claude",
             "cursor",
@@ -104,7 +106,7 @@ def adapt_agents_for_project(pack_dir: str) -> str:
     return content
 
 
-def install_codex(dest_root: Path, force: bool) -> list[Path]:
+def install_skilldir(dest_root: Path, force: bool) -> list[Path]:
     target = dest_root / SKILL_NAME
     copy_tree(ROOT, target, force)
     return [target]
@@ -157,8 +159,8 @@ def main() -> int:
     args = parse_args()
     dest_root = Path(args.to).expanduser().resolve()
 
-    if args.vendor == "codex":
-        changed = install_codex(dest_root, args.force)
+    if args.vendor in {"codex", "qoderwork", "skilldir"}:
+        changed = install_skilldir(dest_root, args.force)
     elif args.vendor == "opencode":
         changed = install_opencode(dest_root, args.scope, args.force)
     else:
@@ -168,7 +170,7 @@ def main() -> int:
     for path in changed:
         print(f"- {path}")
 
-    if args.vendor in {"codex", "opencode"}:
+    if args.vendor in {"codex", "qoderwork", "skilldir", "opencode"}:
         print("Restart the tool to pick up the new skill if needed.")
     else:
         print("Open the target project in the corresponding tool to start using the installed instructions.")

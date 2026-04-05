@@ -70,6 +70,18 @@ python3 dcs-master/scripts/install-portable-skill.py universal --to /path/to/pro
 python3 ~/.codex/skills/dcs-master/scripts/check-skill-update.py
 ```
 
+- 如果你怀疑安装不完整，也可以运行健康检查：
+
+```bash
+python3 ~/.codex/skills/dcs-master/scripts/check-install-health.py
+```
+
+- 如果检测到缺文件并且想自动修复，可直接运行：
+
+```bash
+python3 ~/.codex/skills/dcs-master/scripts/check-install-health.py --repair
+```
+
 - 也可以直接查看本仓库的 Release 页面：
 
 ```text
@@ -96,6 +108,15 @@ python3 -c "import pathlib,tempfile,urllib.request,subprocess,sys;root=pathlib.P
 
 ```bash
 python3 /path/to/project/.opencode/skills/dcs-master/scripts/upgrade-from-github.py opencode --to /path/to/project --scope project
+```
+
+### QoderWork 升级
+
+如果你是安装在 `~/.qoderwork/skills/dcs-master`，可以运行：
+
+```bash
+python3 ~/.qoderwork/skills/dcs-master/scripts/check-install-health.py
+python3 ~/.qoderwork/skills/dcs-master/scripts/check-install-health.py --repair
 ```
 
 ### Claude / Cursor / Copilot / Gemini 升级

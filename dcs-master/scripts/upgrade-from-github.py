@@ -28,7 +28,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "vendor",
-        choices=["codex", "opencode", "claude", "cursor", "copilot", "gemini", "universal"],
+        choices=["codex", "qoderwork", "skilldir", "opencode", "claude", "cursor", "copilot", "gemini", "universal"],
         help="Target tool or project layout.",
     )
     parser.add_argument(
