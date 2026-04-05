@@ -1,7 +1,7 @@
 {
   "name": "dcs-master",
   "display_name": "DCS Master 助手",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "source": {
     "repo": "Kidd-Ye/dcs-master",
     "ref": "main",
