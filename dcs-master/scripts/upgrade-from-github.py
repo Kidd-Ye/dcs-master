@@ -6,12 +6,20 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
-import shutil
 import subprocess
 import sys
 import tempfile
 import urllib.request
 import zipfile
+
+
+DEFAULT_MANIFEST = {
+    "source": {
+        "repo": "Kidd-Ye/dcs-master",
+        "ref": "main",
+        "path": "dcs-master",
+    }
+}
 
 
 def parse_args() -> argparse.Namespace:
@@ -43,6 +51,8 @@ def parse_args() -> argparse.Namespace:
 
 
 def load_manifest(path: Path) -> dict:
+    if not path.exists():
+        return DEFAULT_MANIFEST
     with path.open("r", encoding="utf-8") as handle:
         return json.load(handle)
 

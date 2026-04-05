@@ -84,6 +84,12 @@ https://github.com/Kidd-Ye/dcs-master/releases
 python3 ~/.codex/skills/dcs-master/scripts/upgrade-from-github.py codex --to ~/.codex/skills
 ```
 
+如果你当前还是旧版，本地还没有升级脚本，可直接运行这个自举命令：
+
+```bash
+python3 -c "import pathlib,tempfile,urllib.request,subprocess,sys;root=pathlib.Path(tempfile.gettempdir())/'dcs-master-bootstrap';root.mkdir(exist_ok=True);script=root/'upgrade-from-github.py';script.write_bytes(urllib.request.urlopen('https://raw.githubusercontent.com/Kidd-Ye/dcs-master/main/dcs-master/scripts/upgrade-from-github.py', timeout=20).read());subprocess.run([sys.executable,str(script),'codex','--to',str(pathlib.Path.home()/'.codex/skills')], check=True)"
+```
+
 ### OpenCode 升级
 
 项目级安装可直接覆盖升级：
