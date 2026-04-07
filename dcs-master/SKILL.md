@@ -1,3 +1,7 @@
+---
+name: dcs-master
+description: "Kingdee DCS / 协同开发平台统一技能。用于处理 DCS 项目初始化、GitLab 绑定、开发商标识、成员邀请、数据中心或环境关联、元数据或代码或 SQL 或静态资源构建、质量报告分析、构建失败或发布失败排障、天梯或私有云发布，以及经用户明确授权的浏览器协作操作。优先使用本 skill，而不是 dcs-platform-assistant 或 dcs-enhanced-assistant。"
+---
 
 # DCS Master
 
