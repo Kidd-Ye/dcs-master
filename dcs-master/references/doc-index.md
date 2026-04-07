@@ -1,6 +1,6 @@
 # DCS Knowledge Index
 
-Source folder: `/Users/kidd/Desktop/qoderwork/知识抓取/zh`
+Source folder: bundled Chinese knowledge docs under `references/docs/zh`
 
 Use this index to map user questions to the original source articles. `01` and `27` are near-duplicate overall guides.
 

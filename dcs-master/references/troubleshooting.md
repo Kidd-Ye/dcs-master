@@ -49,7 +49,7 @@ There are two common cases.
   2. use the log output as the primary troubleshooting evidence
   3. if the build log still does not expose a useful clue, route the user to DCS platform support instead of guessing
 - Current field rule:
-  - if the log is also not helpful, ask the user to contact 林心梅 or 谭鼎鹏 in the DCS 云之家沟通群
+  - if the log is also not helpful, ask the user to contact the official DCS platform support contact in the DCS 云之家沟通群
 - Do not prioritize dashboard-style interpretation ahead of the build log for this scenario.
 
 ## Quality-Scan Problems

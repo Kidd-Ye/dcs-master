@@ -99,7 +99,7 @@ python3 ~/.codex/skills/dcs-master/scripts/upgrade-from-github.py codex --to ~/.
 如果你当前还是旧版，本地还没有升级脚本，可直接运行这个自举命令：
 
 ```bash
-python3 -c "import pathlib,tempfile,urllib.request,subprocess,sys;root=pathlib.Path(tempfile.gettempdir())/'dcs-master-bootstrap';root.mkdir(exist_ok=True);script=root/'upgrade-from-github.py';script.write_bytes(urllib.request.urlopen('https://raw.githubusercontent.com/Kidd-Ye/dcs-master/main/dcs-master/scripts/upgrade-from-github.py', timeout=20).read());subprocess.run([sys.executable,str(script),'codex','--to',str(pathlib.Path.home()/'.codex/skills')], check=True)"
+python3 -c "import hashlib,pathlib,tempfile,urllib.request,subprocess,sys;url='https://raw.githubusercontent.com/Kidd-Ye/dcs-master/f76213c79fdb/dcs-master/scripts/upgrade-from-github.py';expected='ecbacb714116a46462b0de66557690a20f592c18b29c4624dcd6d5be971655a4';data=urllib.request.urlopen(url, timeout=20).read();actual=hashlib.sha256(data).hexdigest();assert actual==expected, f'sha256 mismatch: {actual}';root=pathlib.Path(tempfile.gettempdir())/'dcs-master-bootstrap';root.mkdir(exist_ok=True);script=root/'upgrade-from-github.py';script.write_bytes(data);subprocess.run([sys.executable,str(script),'codex','--to',str(pathlib.Path.home()/'.codex/skills')], check=True)"
 ```
 
 ### OpenCode 升级
@@ -144,7 +144,7 @@ python3 /path/to/project/.dcs-master/scripts/upgrade-from-github.py universal --
 
 ## 版本
 
-- 当前版本：`v1.0.3`
+- 当前版本：`v1.0.4`
 
 ## 许可证
 

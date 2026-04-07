@@ -54,7 +54,7 @@ Load this file when the user is setting up DCS access, a new project, or an envi
 - If the user cannot see the ISV project type at all, do not collapse this into a pure developer-identifier problem.
 - Current platform rule from field experience:
   - the user should first contact DCS platform operations
-  - operations will direct the user to contact 唐佐平 in the ecology team for authorization
+  - operations will direct the user to the designated ecology authorization contact
   - after authorization, the user can create `ISV标准产品开发` projects
 - Treat this as a gating permission on project-type visibility, not merely a downstream identifier-selection filter.
 
@@ -103,7 +103,7 @@ Use this before pushing artifacts to 天梯.
 - `新建项目时看不到 ISV标准产品开发`
   - this is not the same as "cannot select developer identifier"
   - check whether the account has been opened for ISV project-type creation
-  - if not, ask the user to contact DCS platform operations and follow the authorization path to 唐佐平 for ISV project creation
+  - if not, ask the user to contact DCS platform operations and follow the platform's ISV authorization path
 - product-side project not visible for association
   - check developer identifier, project creation date, and DCS project membership
 - `未查询到关联环境`

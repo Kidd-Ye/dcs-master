@@ -164,8 +164,8 @@ agent-browser --session dcs_session open https://dcs.kingdee.com
 agent-browser --session dcs_session snapshot -i
 
 # 填写输入框
-agent-browser --session dcs_session fill @e1 "用户名"
-agent-browser --session dcs_session fill @e2 "密码"
+agent-browser --session dcs_session fill @e1 "<当前会话中的用户名输入>"
+agent-browser --session dcs_session fill @e2 "<当前会话中的敏感输入>"
 
 # 点击按钮
 agent-browser --session dcs_session click @e3
@@ -234,7 +234,7 @@ agent-browser --session $SESSION snapshot -i
 # 如果用户选择账号密码登录，再继续填写表单
 # agent-browser --session $SESSION click @e2
 # agent-browser --session $SESSION fill @e3 "your_username"
-# agent-browser --session $SESSION fill @e4 "your_password"
+# agent-browser --session $SESSION fill @e4 "<按当前会话输入的敏感信息>"
 # agent-browser --session $SESSION click @e5
 
 # 等待登录完成
@@ -437,19 +437,22 @@ agent-browser --session $SESSION screenshot --full datacenter_linked.png
 ### 敏感信息处理
 
 ```bash
-# 推荐：使用环境变量存储敏感信息
-export DCS_USERNAME="your_username"
-export DCS_PASSWORD="your_password"
+# 推荐：在当前 shell 会话中临时读取敏感信息，不写入配置文件或历史命令
+read -r "DCS_USERNAME?Username: "
+read -rs "DCS_PASSWORD?Password: "
+printf '\n'
 
 # 脚本中引用
 agent-browser --session $SESSION fill @e1 "$DCS_USERNAME"
 agent-browser --session $SESSION fill @e2 "$DCS_PASSWORD"
+unset DCS_PASSWORD
 ```
 
 补充规则：
 
 - 不要在看到真实登录页之前预设用户一定使用账号密码。
 - 只有在用户明确选择了对应登录方式后，才收集该方式需要的敏感信息。
+- 不要把账号、密码或安全码写入 shell 配置、脚本文件、缓存文件或版本库。
 - 成功定位到稳定元素后，优先回写 `state/ui-element-cache.json`，不要只记在当前会话上下文里。
 
 ### 高风险操作确认
