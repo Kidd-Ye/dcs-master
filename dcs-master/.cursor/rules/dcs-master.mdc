@@ -8,5 +8,18 @@ alwaysApply: true
 ## Cursor
 
 - Treat the imported `AGENTS.md` as authoritative.
+- **Before each use, execute version check as specified in AGENTS.md**.
 - Keep replies milestone-based and evidence-driven.
 - Load extra files only when the task actually needs them.
+
+### Cursor Project-level Version Check
+
+```bash
+python3 .dcs-master/scripts/version-check-wrapper.py
+```
+
+### Cursor Project-level Upgrade
+
+```bash
+python3 .dcs-master/scripts/upgrade-from-github.py universal --to .
+```

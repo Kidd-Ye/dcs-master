@@ -3,5 +3,18 @@
 ## Gemini CLI
 
 - 把导入的 `AGENTS.md` 视为权威规则。
+- **每次使用前，先按 AGENTS.md 中的说明执行版本检查**。
 - 需要细节时，再按 `AGENTS.md` 中列出的路径读取对应引用文件。
 - 优先给最小可执行动作和验收信号。
+
+### Gemini 项目级版本检查
+
+```bash
+python3 .dcs-master/scripts/version-check-wrapper.py
+```
+
+### Gemini 项目级升级
+
+```bash
+python3 .dcs-master/scripts/upgrade-from-github.py universal --to .
+```

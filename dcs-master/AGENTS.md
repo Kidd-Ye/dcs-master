@@ -2,9 +2,73 @@
 
 这是 `dcs-master` 的跨工具通用入口。
 
-> **自动版本检查**：每次使用本 skill 前，建议先运行版本检查脚本。如果检测到新版本，请提示用户更新。
-> 检查命令：`python3 ~/.qoderwork/skills/dcs-master/scripts/check-skill-update.py`
-> 升级命令：`python3 ~/.qoderwork/skills/dcs-master/scripts/upgrade-from-github.py qoderwork --to ~/.qoderwork/skills`
+## 自动版本检查（重要）
+
+**每次使用本 skill 前，必须先执行版本检查**。如果检测到新版本，在回复开头提示用户更新。
+
+### 版本检查命令
+
+根据你使用的工具，选择对应的检查方式：
+
+**QoderWork / 通用:**
+```bash
+python3 ~/.qoderwork/skills/dcs-master/scripts/version-check-wrapper.py
+```
+
+**Codex:**
+```bash
+python3 ~/.codex/skills/dcs-master/scripts/version-check-wrapper.py
+```
+
+**OpenCode (项目级):**
+```bash
+python3 .opencode/skills/dcs-master/scripts/version-check-wrapper.py
+```
+
+**Claude / Cursor / Copilot / Gemini (项目级):**
+```bash
+python3 .dcs-master/scripts/version-check-wrapper.py
+```
+
+### 升级命令
+
+**QoderWork:**
+```bash
+python3 ~/.qoderwork/skills/dcs-master/scripts/upgrade-from-github.py qoderwork --to ~/.qoderwork/skills
+```
+
+**Codex:**
+```bash
+python3 ~/.codex/skills/dcs-master/scripts/upgrade-from-github.py codex --to ~/.codex/skills
+```
+
+**OpenCode (项目级):**
+```bash
+python3 .opencode/skills/dcs-master/scripts/upgrade-from-github.py opencode --to . --scope project
+```
+
+**Claude / Cursor / Copilot / Gemini (项目级):**
+```bash
+python3 .dcs-master/scripts/upgrade-from-github.py universal --to .
+```
+
+### 版本检查输出示例
+
+当检测到新版本时，会显示：
+```
+📦 **发现新版本**: dcs-master 1.0.7 → 1.0.8
+   升级命令: python3 .../upgrade-from-github.py ...
+```
+
+**回复模板（发现新版本时）:**
+```
+📦 **发现新版本**: dcs-master X.X.X → Y.Y.Y
+建议先升级以获得最新功能和修复。
+升级命令: [对应工具的升级命令]
+
+---
+[继续处理用户请求]
+```
 
 如果当前工具支持 `SKILL.md` 技能加载，优先使用 `SKILL.md`。
 如果当前工具使用 `AGENTS.md`、`CLAUDE.md`、`GEMINI.md`、Cursor Rules 或 GitHub Copilot 自定义指令，则以本文件为主入口。
