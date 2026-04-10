@@ -2,9 +2,22 @@
 
 Load this file when the user is setting up DCS access, a new project, or an environment association.
 
+## DCS Editions
+
+### Domestic Edition (国内版)
+- URL: `https://dcs.kingdee.com`
+- Developer Portal: `https://dev.kingdee.com/custom/team`
+
+### International Edition (海外版/旗舰国际版)
+- URL: `https://dcs.kdsuite.ai/ierp/`
+- **Important Differences from Domestic Edition:**
+  - Project creation requires uploading a developer identifier file instead of selecting from a dropdown
+  - DCS reads the developer identifier information from the uploaded file
+  - Contact your developer admin or Kingdee representative to obtain the identifier file
+
 ## First-Time Checklist
 
-1. Log in to `https://dcs.kingdee.com`.
+1. Log in to the appropriate DCS URL (see DCS Editions above).
 2. Bind a frequently used email. DCS uses this email to create the GitLab account.
 3. Open the password email and finish the GitLab password setup.
 4. In the product environment, grant `协同开发云` permissions or make the user a full-function user.
@@ -47,6 +60,24 @@ Load this file when the user is setting up DCS access, a new project, or an envi
   - `docs/`
   - `webapp/`
   - `cosmic.json`
+
+### International Edition Project Creation
+
+For the International Edition (`https://dcs.kdsuite.ai/ierp/`):
+
+1. **Obtain Developer Identifier File**
+   - Contact your developer administrator or Kingdee representative
+   - Request the developer identifier configuration file (typically `.json` format)
+   - Ensure the file contains valid developer code, name, and organization type
+
+2. **Upload During Project Creation**
+   - The International Edition does NOT support selecting developer identifier from a dropdown
+   - During project creation, upload the developer identifier file
+   - DCS will read the identifier information from the file automatically
+
+3. **Verify Organization Type**
+   - Customer custom-development: ensure file specifies `金蝶客户` type
+   - ISV product-development: ensure file specifies `ISV伙伴` type
 
 ### ISV Project-Type Availability
 
