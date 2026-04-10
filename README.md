@@ -144,7 +144,7 @@ python3 /path/to/project/.dcs-master/scripts/upgrade-from-github.py universal --
 
 ## 版本
 
-- 当前版本：`v1.0.8`
+- 当前版本：`v1.0.9`
 
 ## 许可证
 
