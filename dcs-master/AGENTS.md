@@ -2,6 +2,10 @@
 
 这是 `dcs-master` 的跨工具通用入口。
 
+> **自动版本检查**：每次使用本 skill 前，建议先运行版本检查脚本。如果检测到新版本，请提示用户更新。
+> 检查命令：`python3 ~/.qoderwork/skills/dcs-master/scripts/check-skill-update.py`
+> 升级命令：`python3 ~/.qoderwork/skills/dcs-master/scripts/upgrade-from-github.py qoderwork --to ~/.qoderwork/skills`
+
 如果当前工具支持 `SKILL.md` 技能加载，优先使用 `SKILL.md`。
 如果当前工具使用 `AGENTS.md`、`CLAUDE.md`、`GEMINI.md`、Cursor Rules 或 GitHub Copilot 自定义指令，则以本文件为主入口。
 
